@@ -1,0 +1,65 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="適度working:)" Height="480.393" Background="SkyBlue" Width="624.24">
+    <Grid>
+        <Grid HorizontalAlignment="Left" Width="616" Height="449" Background="SkyBlue" VerticalAlignment="Bottom">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="280*"/>
+                <ColumnDefinition Width="77*"/>
+                <ColumnDefinition Width="86*"/>
+                <ColumnDefinition Width="163*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Background="White" Margin="0,214,0,0" Grid.ColumnSpan="4"></Grid>
+            <StackPanel Background="White" x:Name="TaskList" Margin="17,8,0,0" HorizontalAlignment="Left" Width="314" Height="351" VerticalAlignment="Top" Grid.ColumnSpan="3" Grid.Column="1"></StackPanel>
+
+            <TextBlock Height="34" Background="Transparent" Margin="-7,0,48,378" Foreground="White" FontSize="24" FontFamily="Adobe Devanagari" Text="遊玩時數" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="401" Grid.ColumnSpan="3" />
+            <TextBlock Height="34" Background="Transparent" Margin="-7,0,48,151" Foreground="SkyBlue" FontSize="24" FontFamily="Adobe Devanagari" Text="工作時數" HorizontalAlignment="Right" Width="401" VerticalAlignment="Bottom" Grid.ColumnSpan="3" />
+            <Border Padding="1" Background="White" CornerRadius="10" Margin="0,30,106.5,0" HorizontalAlignment="Right" Width="60" Height="41" VerticalAlignment="Top">
+                <TextBox  Text="0"  BorderBrush="Transparent" Foreground="SkyBlue" FontSize="18" HorizontalAlignment="Left" x:Name="GameTxt" Background="Transparent" HorizontalContentAlignment="Center" Width="49" Margin="2,3,0,1" RenderTransformOrigin="0.939,0.8" />
+            </Border>
+            <Border Padding="1" Background="SkyBlue" CornerRadius="10" Margin="120,258,0,0" HorizontalAlignment="Left" Width="60" Height="45" VerticalAlignment="Top">
+                <TextBox  Text="0"  BorderBrush="Transparent"  FontSize="18" Foreground="White" HorizontalAlignment="Left" x:Name="WorkTxt" Background="SkyBlue" HorizontalContentAlignment="Center" Width="42" Margin="5,4,0,2" />
+            </Border>
+            <Slider Margin="0,76,70.5,346" Minimum="0" Maximum="24" 
+            TickFrequency="1" TickPlacement="BottomRight" IsSnapToTickEnabled="True"
+            x:Name="MySlider" ValueChanged="MySlider_ValueChanged"></Slider>
+            <Slider Margin="0,303,70.5,119" Minimum="0" Maximum="24" 
+            TickFrequency="1" TickPlacement="BottomRight" IsSnapToTickEnabled="True"
+            x:Name="WorkSlider" ValueChanged="WorkSlider_ValueChanged"></Slider>
+
+            <Button Margin="0,0,71,346" Background="SkyBlue" BorderBrush="Transparent" Foreground="White" FontSize="22" RenderTransformOrigin="-0.382,0.706" HorizontalAlignment="Right" Width="76" Height="34" VerticalAlignment="Bottom" Grid.ColumnSpan="2">確認</Button>
+            <Button Margin="221,303,66,112" Background="White" BorderBrush="Transparent" Foreground="SkyBlue" FontSize="22" Grid.ColumnSpan="2">確認</Button>
+
+            <TextBlock Foreground="White" Margin="10,124,19,275" FontSize="36" Grid.ColumnSpan="2" >0</TextBlock>
+            <TextBlock Foreground="White" Margin="34,146,81,277" FontSize="14" Grid.ColumnSpan="3" >hr</TextBlock>
+
+            <TextBlock Foreground="SkyBlue" Margin="0,333,19,0" FontSize="36" HorizontalAlignment="Right" Width="334" Height="50" VerticalAlignment="Top" Grid.ColumnSpan="2" >0</TextBlock>
+            <TextBlock Foreground="SkyBlue" Margin="34,356,81,67" FontSize="14" Grid.ColumnSpan="3" >hr</TextBlock>
+            <Grid Background="SkyBlue" HorizontalAlignment="Left" Width="314" Margin="17,361,0,0" Grid.ColumnSpan="3" Grid.Column="1" >
+
+                <!--增加項目按鈕-->
+                <Grid Width="40" Height="40" HorizontalAlignment="Left" Margin="20,22,0,26" x:Name="addTask" MouseDown="addTask_MouseDown">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="11*"/>
+                        <ColumnDefinition Width="30*"/>
+                    </Grid.ColumnDefinitions>
+                    <Border CornerRadius="5" Background="SkyBlue" BorderBrush="White" BorderThickness="2" Grid.ColumnSpan="2"></Border>
+                    <TextBlock FontSize="40" Height="40" Width="40" VerticalAlignment="Center" TextAlignment="Center" Foreground="AliceBlue" Margin="0,-10,0,10" Grid.ColumnSpan="2" >+</TextBlock>
+                </Grid>
+
+                <!--總支出顯示-->
+                <StackPanel Orientation="Vertical" Margin="0,15,2,0" HorizontalAlignment="Right" Width="252">
+                    <TextBlock Height="50" Margin="0,2,10,0" FontSize="36" Foreground="AliceBlue" RenderTransformOrigin="0.495,1.49" HorizontalAlignment="Right" Width="218"><Run Text="新"/><Run Text="增"/><Run Text="待"/><Run Text="辦事項"/></TextBlock>
+                </StackPanel>
+            </Grid>
+
+
+        </Grid>
+
+    </Grid>
+</Window>
